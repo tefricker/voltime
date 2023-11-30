@@ -1,7 +1,26 @@
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
   margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+@font-face {
+  font-family: FiraSansRegular;
+  src: url(./assets/fonts/FiraSans-Regular.ttf);
+}
+
+.clock-time {
+  font-family: FiraSansRegular;
+  font-size: 100px;
+
+  text-align: center;
+  color: #111111;
+}
+
+.clock-title {
+  font-family: FiraSansRegular;
+  font-size: 20px;
+  margin-left: 15px;
 }
