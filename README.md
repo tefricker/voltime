@@ -98,7 +98,8 @@ You need npm
 - [ ] Support using your own songs as alarm
 - [ ] Better way to handle useClock(), quite costly at the moment
 - [ ] Remove DayJS as DatePicker adapter
-- [ ] Error page
+- [ ] Jest tests
+- [ ] GithubActions CI
 
 See the [open issues](https://github.com/tefricker/voltime/issues) for a full list of proposed features (and known issues).
 

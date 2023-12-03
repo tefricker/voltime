@@ -1,3 +1,4 @@
+import path from "path";
 import { app, BrowserWindow, ipcMain } from "electron";
 import sqlite3 from "sqlite3";
 
@@ -12,8 +13,9 @@ const BasicSettings = [
   { type: "theme", value: "light" },
   { type: "timeType", value: "24" },
 ];
+const dbPath = path.join(app.getPath("userData"), "voltime.db");
 
-const db = new sqlite3.Database("./db.db");
+const db = new sqlite3.Database(dbPath);
 db.serialize(() => {
   db.run(
     "CREATE TABLE IF NOT EXISTS Settings (id INTEGER PRIMARY KEY , type VARCHAR(50) UNIQUE NOT NULL,value VARCHAR(50));"
