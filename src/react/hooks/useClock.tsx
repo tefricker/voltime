@@ -1,31 +1,15 @@
+import moment from "moment-timezone";
 import { createContext, useContext, useEffect, useState } from "react";
 
 export interface ClockConfig {
-  hour: string;
-  minutes: string;
-  seconds: string;
-  time: Date;
+  moment: moment.Moment;
 }
 
-const doubleDigitBase10 = (number: number) => {
-  return number < 10 ? "0" + number : number.toString();
-};
-
 const blankClockContext: ClockConfig = {
-  hour: doubleDigitBase10(new Date().getHours()),
-  minutes: doubleDigitBase10(new Date().getMinutes()),
-  seconds: doubleDigitBase10(new Date().getSeconds()),
-  time: new Date(),
+  moment: moment(),
 };
 
 const ClockContext = createContext<ClockConfig>(blankClockContext);
-
-const applyTimezone = (utc: number, clockContext: ClockConfig) => {
-  return {
-    ...clockContext,
-    hour: doubleDigitBase10(parseInt(clockContext.hour, 10) + utc).toString(),
-  };
-};
 
 const ClockProvider: React.FC<{
   children?: React.ReactNode;
@@ -33,12 +17,9 @@ const ClockProvider: React.FC<{
   const [clock, setClock] = useState<ClockConfig>(blankClockContext);
   useEffect(() => {
     setInterval(() => {
-      const time = new Date();
+      const momentTime = moment();
       const clock = {
-        time: time,
-        hour: doubleDigitBase10(time.getHours()),
-        minutes: doubleDigitBase10(time.getMinutes()),
-        seconds: doubleDigitBase10(time.getSeconds()),
+        moment: momentTime,
       };
       setClock(clock);
     }, 1000);
@@ -49,6 +30,6 @@ const ClockProvider: React.FC<{
   ) : null;
 };
 
-const useClock = (utc: number) => applyTimezone(utc, useContext(ClockContext));
+const useClock = () => useContext(ClockContext);
 
 export { ClockProvider, useClock };

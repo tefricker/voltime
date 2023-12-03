@@ -12,15 +12,13 @@ body {
 }
 
 .clock-time {
-  font-family: FiraSansRegular;
-  font-size: 100px;
-
-  text-align: center;
-  color: #111111;
+  font-family: FiraSansRegular !important;
+  font-size: 100px !important;
+  width: 400px;
 }
 
 .clock-title {
-  font-family: FiraSansRegular;
-  font-size: 20px;
-  margin-left: 15px;
+  font-family: FiraSansRegular !important;
+  font-size: 26px !important;
+  margin-left: 15px !important;
 }

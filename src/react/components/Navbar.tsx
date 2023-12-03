@@ -1,21 +1,10 @@
-import {
-  AppBar,
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-} from "@mui/material";
+import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
 import AccessTimeRoundedIcon from "@mui/icons-material/AccessTimeRounded";
 import SettingsIcon from "@mui/icons-material/Settings";
-import { Dispatch, SetStateAction } from "react";
-const Navbar = ({
-  setSettingsOpened,
-}: {
-  setSettingsOpened: Dispatch<SetStateAction<boolean>>;
-}) => {
+import { useNavigate } from "react-router-dom";
+const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
@@ -26,18 +15,19 @@ const Navbar = ({
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "flex" } }}>
             <Button
-              onClick={(handleCloseNavMenu) => console.log("oui")}
               sx={{ my: 2, color: "white", display: "block" }}
+              onClick={() => navigate("/")}
             >
-              Horloges
+              Clocks
             </Button>
             <Button
-              onClick={(handleCloseNavMenu) => console.log("oui")}
               sx={{ my: 2, color: "white", display: "block" }}
+              onClick={() => navigate("/alarms")}
             >
-              Alarmes
+              Alarms
             </Button>
           </Box>
+
           <Box
             sx={{
               flexGrow: 1,
@@ -46,7 +36,7 @@ const Navbar = ({
             }}
           >
             <Button
-              onClick={() => setSettingsOpened(true)}
+              onClick={() => navigate("/settings")}
               sx={{
                 my: 2,
                 color: "white",
