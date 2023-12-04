@@ -94,7 +94,7 @@ You need npm
 
 - [ ] I18N with French support
 - [ ] Add an ErrorBoundary, I don't think it's error-prone atm due to the fairly easy features it provides (I'm delusional)
-- [ ] Online capability with local time sync
+- [ ] Online support with timezones searchable by cities with local time sync
 - [ ] Better design (didn't have the time)
 - [ ] Native notifications (requires some app signing)
 - [ ] Support using your own songs as alarm
