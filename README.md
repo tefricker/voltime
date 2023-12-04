@@ -58,6 +58,8 @@ It features :
 
 ## Getting Started
 
+To simply download the app for Windows/Mac : https://drive.google.com/drive/folders/1XQtDQ_24ai-6mtM3hyuJAcGyjXgcrB2n?usp=drive_link
+
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
